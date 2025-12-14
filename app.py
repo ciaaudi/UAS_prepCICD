@@ -1,6 +1,5 @@
 # app.py
 from flask import Flask, jsonify, request, render_template, make_response
-import json
 
 # A simple in-memory dictionary to simulate a database for our pets
 pets = {}
@@ -55,13 +54,14 @@ def update_pet(pet_id):
     Updates an existing pet.
     """
     if pet_id not in pets:
-      return jsonify({"message": f"Pet with ID {pet_id} not found"}), 404
-    
+        return jsonify({"message": f"Pet with ID {pet_id} not found"}), 404
+
     data = request.get_json()
     pet = pets[pet_id]
     pet.update(data)
     pets[pet_id] = pet
     return jsonify(pet), 200
+
 
 # API endpoint for deleting a pet
 @app.route('/pets/<int:pet_id>', methods=['DELETE'])
