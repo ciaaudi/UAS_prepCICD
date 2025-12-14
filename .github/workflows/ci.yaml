@@ -1,11 +1,11 @@
-    name: CI Pipeline
+name: CI Pipeline
 
-    on: [push]
+on: [push]
 
-    jobs:
-    build:
-        runs-on: ubuntu-latest
+jobs:
+build:
+    runs-on: ubuntu-latest
         
-        steps:
-        - name: Say Hello
-            run: echo "The pipeline is working!"
+    steps:
+    - name: Say Hello
+        run: echo "The pipeline is working!"
