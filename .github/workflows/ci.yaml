@@ -10,14 +10,13 @@ jobs:
       - name: Say Hello
         run: echo "The pipeline is working!"
 
-    steps:
       - name: Checkout Code
-        uses: actions/checkout@v3   # Downloads the code to the runner
+        uses: actions/checkout@v3 # Downloads the code to the runner
 
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: '3.11'
+          python-version: "3.11"
 
       - name: Install Dependencies
         run: |
