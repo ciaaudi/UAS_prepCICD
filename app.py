@@ -46,7 +46,7 @@ def handle_pets():
             matching_pets = [
                 pet for pet in pets.values() 
                 if pet.get('category', '').strip().lower() == category
-                ]
+            ]
             return jsonify(matching_pets)
         
         return jsonify(list(pets.values()))
